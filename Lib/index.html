@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--experiment-->
+ <section id ="home">
+    <nav class="nav-bar">
+        <h2 class="logo">TechNest</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#books">Book Catalogue</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    
+<div class="home-container" >
+    <div>
+    <h1>Explore Our Books and Gain More Knokwledge in Tech</h1>
+     <button id="categories">View More</button> 
+</div>
+<div class="home-card">
+    <img src="img/home-card.jpg" alt= "home-card">
+    </div>
+    </div>
+   
+</section> 
+
+<!--About-->
+<section id="about">
+    <div class="about-us">
+        <h1>About Us</h1>
+        <p>There's a lot to know about TechNest.
+            TechNest is a library system thatv is just the best for this our generation.
+            our books are mind blowing, read and grow your tech skills.
+            many belief that AI has come to replace humans but with TechNest, <span>that is not possible.</span>
+        </p>
+    <p id ="create">The slogan we love here at TechNest is AI won't replace you <span>create don't compete</span></p>
+    <span><button id="clickIt">Show More</button></span>
+    </div>
+</section>
+<!--form-->
+<br><br><br><br><br><br>
+<div class="form-container">
+<form action="post" id="bookId">
+    <input type="text" id="title">
+    <input type="text" id="author">
+    <br><br>
+    <input type="text" id="category">
+    <input type="text" id="availabilty">
+    <br><br>
+    <button type="button" id="addBookBtn">Add Book</button>
+</form>
+</div>
+<!-- book container is rendered inside the #books section below -->
+
+<!--book catalogue-->
+<section id="books">
+    <h2>Our Books</h2>
+    <div id="stats" style="max-width:900px;margin:0.25rem auto 1rem; display:flex; gap:1rem; justify-content:center; align-items:stretch;">
+        <div class="stat-card" id="availableCard">
+            <div class="stat-label">Available</div>
+            <div class="stat-value" id="availableCount">0</div>
+        </div>
+        <div class="stat-card" id="borrowedCard">
+            <div class="stat-label">Borrowed</div>
+            <div class="stat-value" id="borrowedCount">0</div>
+        </div>
+        <div class="stat-card" id="totalCard">
+            <div class="stat-label">Total</div>
+            <div class="stat-value" id="totalCount">0</div>
+        </div>
+        
+    </div>
+    <div id="bookContainer">
+
+    </div>
+</section>
+
+
+
+
+<footer>
+        <h3>TechNest</h3>
+        <br>
+        <p>Follow Us for More Books
+            Your Future is Bright With Us
+        </p>
+        <p>&copy; 2026 All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
