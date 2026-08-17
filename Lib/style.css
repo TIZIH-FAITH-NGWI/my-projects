@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg: #f6f8fb;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+    --accent: #0b1020;
+    --gap: clamp(0.75rem, 1.2vw, 1.25rem);
+}
+
+body{
+    background: var(--bg);
+    color: var(--accent);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.nav-bar {
+    display:flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #0b1020;
+    padding:12px 20px;
+    width:100%;
+    z-index: 10;
+    gap:1.5rem;
+    transition: background-color 240ms ease, box-shadow 240ms ease;
+}
+.nav-bar ul{
+   list-style: none;
+   display:flex;
+  align-items: center;
+  gap:2rem;
+}
+
+.nav-bar a{
+    align-items: center;
+    color:white;
+    text-decoration: none; 
+}
+
+.logo{
+    color:rgb(103, 59, 59);
+    display:inline-flex;
+}
+
+.home-container{
+    display: flex;
+    padding:30px;
+    margin: 6rem auto 2rem;
+}
+.home-container img{
+     width:100%;
+    height:350px;
+    position: relative;
+    border-radius: 20px;
+    display: block;
+
+}
+.home-card {
+    width:100%;
+    height:350px;
+    position: relative;
+    border-radius: 20px;
+    display: block;
+}
+.home-container h1{
+    color:#0b1020;
+    padding:40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+}
+
+section button{
+    padding: 18px 31px;
+    border: 2px solid #0b1020;
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-inline-start: 40px;
+
+}
+@media (max-width:600px),(min-width:300px){
+    .home-container img{
+        height:350px;
+    }
+}
+
+/*about us*/
+
+.about-us{
+    display:flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.about-us h1{
+    text-align: left;
+    padding:20px;
+    font-size: clamp(1.2rem, 4vw, 3rem);
+}
+.about-us p{
+     font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 50rem;
+  justify-content: right;
+}
+
+.about-us button{
+    padding:18px 31px;
+    color: black;
+    background:transparent;
+    border:2px solid #0b1020;
+    border-radius: 10px;
+}
+
+.about-us button:hover{
+    cursor:pointer;
+    background-color:#0b1020;
+    color: #fff;
+}
+.about-us span{
+    color:rgb(203, 113, 113);
+    font-weight: bolder;
+}
+
+
+/*form*/
+
+.form-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+padding:25px 150px;
+border-radius: 5px;
+border: 1px solid;
+margin: 20px;
+
+}
+
+/* Add Book button styling */
+#addBookBtn{
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 8px;
+}
+#addBookBtn:hover{ background: #1d4ed8; transform: translateY(-2px); }
+#addBookBtn:active{ transform: translateY(0); }
+
+/* Books grid */
+#books{
+    padding: 2rem;
+}
+section h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+#bookContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--gap);
+    align-items: start;
+}
+
+.book-card{
+    border: 1px solid rgba(16,24,40,0.06);
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 6px 18px rgba(11,16,32,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, background-color 260ms ease;
+}
+
+/* Cover wrapper enforces tall portrait look */
+.cover{
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(11,16,32,0.06);
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    display: block;
+    margin-bottom: 12px;
+    transition: transform 360ms ease, box-shadow 260ms ease;
+    
+}
+
+.cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform-origin: center;
+    transition: transform 480ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+}
+
+.book-card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(11,16,32,0.12);
+}
+
+.book-card:hover .cover{ transform: translateY(-6px) scale(1.02); box-shadow: 0 26px 60px rgba(11,16,32,0.14); }
+.book-card:hover .cover img{ transform: scale(1.04); }
+
+.book-card h3{ margin: 0 0 8px 0; transition: color 200ms ease; font-size: 1.05rem; }
+.book-card p{ margin: 4px 0; color: var(--muted); transition: color 200ms ease; font-size: 0.95rem; }
+
+.card-actions{ display:flex; gap:0.5rem; margin-top:0.75rem; }
+.card-actions button{ padding:8px 12px; border-radius:8px; border: none; cursor: pointer; font-weight:600; }
+.delete-btn{ background:#ef4444; color:#fff; }
+.borrow-btn{ background:#10b981; color:#fff; }
+.return-btn{ background:#f59e0b; color:#fff; }
+
+/* status indicator styles */
+.status.available{ color: #10b981; font-weight: 700; }
+.status.unavailable{ color: #ef4444; font-weight: 700; }
+
+/* Stats bar */
+#stats{ display:flex; gap:1rem; justify-content:center; align-items:stretch; }
+.stat-card{ background: linear-gradient(180deg,#ffffff, #f8fafc); border-radius:10px; padding:12px 18px; min-width:140px; box-shadow: 0 6px 18px rgba(11,16,32,0.04); text-align:center; }
+.stat-label{ font-size:0.85rem; color:var(--muted); margin-bottom:6px; }
+.stat-value{ font-size:1.6rem; font-weight:800; color:var(--accent); }
+#availableCard .stat-value{ color:#10b981; }
+#borrowedCard .stat-value{ color:#ef4444; }
+#totalCard .stat-value{ color:#0b1020; }
+
+@media (max-width:640px){
+    #stats{ flex-direction: column; gap:0.75rem; max-width:320px; margin-inline:auto; }
+    .stat-card{ min-width: auto; }
+}
+
+/* Responsive fixes for various screen sizes */
+@media (max-width:900px){
+    form input{ padding:12px 28px; max-width:520px; width:100%; }
+    .home-container{ padding:20px; margin:6rem auto 1rem; flex-direction:column; }
+    .nav-bar{ position:relative; padding:12px 16px; gap:1rem; }
+    .nav-bar ul{ gap:1rem; flex-wrap:wrap; }
+    #bookContainer{ padding:1rem; }
+}
+
+@media (max-width:600px){
+    .nav-bar{ flex-direction:column; align-items:flex-start; gap:0.5rem; height:auto; }
+    .nav-bar ul{ flex-direction:column; gap:0.5rem; }
+    .home-container img{ height:220px; }
+    .cover{ height:220px; }
+    .book-card{ padding:0.75rem; }
+    .stat-card{ padding:10px 14px; min-width:unset; }
+    form input{ padding:10px 14px; width:100%; max-width:320px; }
+    #bookContainer{ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .book-card h3{ font-size:1rem; }
+}
+
+section h2{ margin: 1rem 0 0.75rem 0; color: var(--accent); }
+
+button, .about-us button, section button{
+    transition: transform 160ms ease, background-color 200ms ease, color 200ms ease;
+}
+
+button:hover, .about-us button:hover, section button:hover{
+    transform: translateY(-3px);
+}
+
+@media (max-width: 440px){
+    form input{ padding:12px 24px; }
+    .home-container{ flex-direction: column; }
+}
+
+
+footer{
+    padding: 20px;
+    background-color: #0b1020;
+    color: #ffffff;
+    width: 100%;
+    gap:4rem;
+    height: 20vh;
+}
+
+footer p{
+    text-align: center;
+    font-size: small;
+}
+footer h3{
+    text-align: center;
+}
